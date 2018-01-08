@@ -7,12 +7,20 @@
   <script type="text/javascript" src="base.js"></script>
 </head>
 <body>
+  <script>
+      document.querySelector("#cc-number").addEventListener("input", function(event){
+        event.preventDefault();
+      }, false);
+      document.querySelector("#cc-exp-month").addEventListener("input", function(event){
+        event.stopPropagation();
+      }, false);
+  </script>
   <h1>Form Autofill Demo: Basic Credit Card @autocomplete</h1>
 
   <form class="alignedLabels">
     <label>Name: <input autocomplete="cc-name"></label>
-    <label>Card Number: <input autocomplete="cc-number"></label>
-    <label>Expiration month: <input autocomplete="cc-exp-month"></label>
+    <label>Card Number: <input id="cc-number" autocomplete="cc-number"></label>
+    <label>Expiration month: <input id="cc-exp-month" autocomplete="cc-exp-month"></label>
     <label>Expiration year: <input autocomplete="cc-exp-year"></label>
     <label>CSC: <input autocomplete="cc-csc"></label>
     <p>
